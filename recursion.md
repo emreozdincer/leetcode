@@ -49,3 +49,30 @@ Can you use these parameters and the value of the node itself to determine what 
 Then `top-down`.
 
 For a node in a tree, if you know the answer of its children, can you calculate the answer of that node? Then `bottom-up`.
+
+### Questions
+1. Symmetric Tree Check
+  * Looking top-down from the root, left subtree and the right subtree must match structurally and value-wise.
+  * Null checks ensure structural match, whereas the main part enforces values recursively.
+  * Time complexity: Must check every node: O(n)
+  * Space complexity: Proportional to the height. In the worst case if we get a skewed tree like a linked-list, even then the algorithm will fail immediately, so it won't be O(n).
+ ``` 
+    var isSymmetric = function(root) {
+    if (!root) return true;
+    
+    checkTrees = (left, right) => {
+        if (!left && !right) {
+            return true;
+        } else if (left !== null && right !== null) {
+            return left.val === right.val &&
+                checkTrees(left.left, right.right) &&
+                checkTrees(left.right, right.left)
+        } else { // structures dont match
+            return false;
+        }
+    }
+    
+    return checkTrees(root.left, root.right);
+  }; 
+  ```
+  
