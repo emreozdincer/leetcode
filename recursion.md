@@ -56,7 +56,7 @@ For a node in a tree, if you know the answer of its children, can you calculate 
   * Null checks ensure structural match, whereas the main part enforces values recursively.
   * Time complexity: Must check every node: O(n)
   * Space complexity: Proportional to the height. In the worst case if we get a skewed tree like a linked-list, even then the algorithm will fail immediately, so it won't be O(n).
- ``` 
+ ```javascript
     var isSymmetric = function(root) {
     if (!root) return true;
     
