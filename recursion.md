@@ -51,7 +51,7 @@ Then `top-down`.
 For a node in a tree, if you know the answer of its children, can you calculate the answer of that node? Then `bottom-up`.
 
 ### Questions
-1. Symmetric Tree Check
+1. **Symmetric Tree Check**
   * Looking top-down from the root, left subtree and the right subtree must match structurally and value-wise.
   * Null checks ensure structural match, whereas the main part enforces values recursively.
   * Time complexity: Must check every node: O(n)
@@ -75,7 +75,7 @@ For a node in a tree, if you know the answer of its children, can you calculate 
     return checkTrees(root.left, root.right);
   }; 
   ```
-2. (Root to leaf) [Path Sum](https://leetcode.com/problems/path-sum/)
+2. **(Root to leaf) [Path Sum](https://leetcode.com/problems/path-sum/)**
   * Time complexity: Must check every node: O(n)
   ```javascript
   var hasPathSum = function(root, sum) {
