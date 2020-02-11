@@ -75,4 +75,25 @@ For a node in a tree, if you know the answer of its children, can you calculate 
     return checkTrees(root.left, root.right);
   }; 
   ```
-  
+2. (Root to leaf) [Path Sum](https://leetcode.com/problems/path-sum/)
+  * Time complexity: Must check every node: O(n)
+  ```javascript
+  var hasPathSum = function(root, sum) {
+    var addChild = function (current, child) {
+        if (child === null) {
+            return false;
+        }
+        
+        const val = current + child.val;
+        
+        // if leaf, check
+        if (!child.left && !child.right){
+            return val === sum;
+        }
+        
+        return (addChild (val, child.left) || addChild (val, child.right))
+    }
+    
+    return addChild(0, root);
+  };
+  ```
