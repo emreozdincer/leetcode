@@ -16,7 +16,7 @@ Journey with data structures and algorithms
   2. In-order traversal: left-root-right
   3. Post-order traversal: left-right-root
 
-  Pseudocode:
+  **Recursive pseudocode** (other recursive solutons are similar):
   ```
   preorder(node)
     if node === null then return
@@ -24,10 +24,35 @@ Journey with data structures and algorithms
     preorder(node.left)
     preorder(node.right)
   ```
+  
+  **Iterative solution (preorder)**:
+  * Utilizes a stack.
+  * Constantly pushes right subtree before left subtree so that left subtree is popped and processed earlier in the next iteration.
+  * Time Complexity: O(N)
+  * Auxiliary Space: O(h). In each iteration, the stack size is increased by 1 at most, and happens *height of tree* times.
+  ```javascript
+  var preorderTraversal = function(root) {
+      if (!root) return []
+
+      const stack = [root];
+      const result = []
+
+      while (stack.length > 0) {
+          const popped = stack.pop();
+          result.push(popped.val)
+
+          if (popped.right) stack.push(popped.right)
+          if (popped.left) stack.push(popped.left)
+      }
+
+      return result;
+  };
+  ```
 
 * BFS: [Level-order traversal](https://www.youtube.com/watch?v=86g8jAQug04&t=4s&ab_channel=mycodeschool)
   * Time complexity: O(n)
   * Space complexity: O(1) best, O(n) average/worst
+  *
   
 # JavaScript
 * `shift()`: "dequeue" an array
