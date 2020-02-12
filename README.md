@@ -48,6 +48,34 @@ Journey with data structures and algorithms
       return result;
   };
   ```
+  
+  **Iterative solution (inorder)**:
+  * Utilizes a stack.
+  * Going left until current node is null, pushes each visited node to the stack.
+  * Once arrived at null, pops from the stack and prints the value 
+  * Time Complexity: O(N)
+  * Auxiliary Space: O(h). In each iteration, the stack size is increased by 1 at most, and happens *height of tree* times.
+  ```javascript
+    var inorderTraversal = function(root) {
+      if (!root) return []
+
+      const result = [];
+      const stack = [];
+      let curr = root;
+
+      while (curr !== null || stack.length > 0) {
+          while (curr !== null) {
+              stack.push(curr);
+              curr = curr.left;
+          }
+          curr = stack.pop();
+          result.push(curr.val);
+          curr = curr.right;
+      }
+
+      return result;
+    };
+  ```
 
 * BFS: [Level-order traversal](https://www.youtube.com/watch?v=86g8jAQug04&t=4s&ab_channel=mycodeschool)
   * Time complexity: O(n)
