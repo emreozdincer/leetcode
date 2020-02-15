@@ -73,5 +73,9 @@ Journey with data structures and algorithms
 * Time Complexity: Push, pop, getMin O(1)
 * Space Complexity: Worst Case O(N)
 
+#### [Daily Temperatures](https://www.youtube.com/watch?v=WGm4Kj3lhRI&ab_channel=AlexanderLe)
+* Start iterating from the end. Use a stack to intelligently track the increasing degrees. 
+* Time Complexity: O(N), where N is the length of T and W is the number of allowed values for T[i]. Each index gets pushed and popped at most once from the stack.
+* Space Complexity: O(W). The size of the stack is bounded as it represents strictly increasing temperatures.
 # JavaScript
 * `shift()`: "dequeue" an array
