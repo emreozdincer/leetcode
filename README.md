@@ -65,7 +65,13 @@ Journey with data structures and algorithms
 * Can utilize BFS with a queue.
 * Start from top-left, 2D loop.
 * If the node is not visited & has land, mark as visited, increment the land counter, and apply BFS to find all neighboring lands and mark them as visited as well.
-* Time complexity : O(M×N
+* Time complexity : O(M×N)
+
+#### [Stack with min(stack) operation in O(1)](https://www.youtube.com/watch?v=8Ub73n4ySYk&ab_channel=IDeserve)
+* Utilize two stacks, first being usual and the second to keep track of the minimum values.
+* If a newly pushed element is less than the current minimum (which is indicated from top of the 2nd stack), then push it to second stack as well.
+* Time Complexity: Push, pop, getMin O(1)
+* Space Complexity: Worst Case O(N)
 
 # JavaScript
 * `shift()`: "dequeue" an array
