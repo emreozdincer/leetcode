@@ -57,5 +57,15 @@ Journey with data structures and algorithms
   * Time complexity: O(n)
   * Space complexity: O(1) best, O(n) average/worst
   
+# Queues and Stacks
+* Circular queue (aka *Ring Buffer*) implementation is smart in that it enables you to use allocated space continously, utilizing 'head' and 'tail' pointers and moving them around.
+
+### Questions
+#### [Number of Islands](https://leetcode.com/problems/number-of-islands/)
+* Can utilize BFS with a queue.
+* Start from top-left, 2D loop.
+* If the node is not visited & has land, mark as visited, increment the land counter, and apply BFS to find all neighboring lands and mark them as visited as well.
+* Time complexity : O(M×N
+
 # JavaScript
 * `shift()`: "dequeue" an array
