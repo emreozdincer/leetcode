@@ -77,5 +77,8 @@ Journey with data structures and algorithms
 * Start iterating from the end. Use a stack to intelligently track the increasing degrees. 
 * Time Complexity: O(N), where N is the length of T and W is the number of allowed values for T[i]. Each index gets pushed and popped at most once from the stack.
 * Space Complexity: O(W). The size of the stack is bounded as it represents strictly increasing temperatures.
+
 # JavaScript
+* [DS in JS](https://adrianmejia.com/data-structures-time-complexity-for-beginners-arrays-hashmaps-linked-lists-stacks-queues-tutorial/)
 * `shift()`: "dequeue" an array
+* To sort by ascending numeric order: `arr.sort((a,b) => a-b);`
