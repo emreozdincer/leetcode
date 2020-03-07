@@ -25,6 +25,17 @@ Journey with data structures and algorithms
     preorder(node.right)
   ```
   
+  To serialize a node (to identify it in a HashMap etc.):
+  ```javascript
+  const serialize = node => {
+    if (!node) return '#'
+
+    let str = node.val + ',' + serialize(node.left) + ',' + serialize(node.right);
+
+    return str;
+  }
+  ```
+  
   **Iterative solution (preorder)**:
   * Utilizes a stack.
   * Constantly pushes right subtree before left subtree so that left subtree is popped and processed earlier in the next iteration.
@@ -81,4 +92,8 @@ Journey with data structures and algorithms
 # JavaScript
 * [DS in JS](https://adrianmejia.com/data-structures-time-complexity-for-beginners-arrays-hashmaps-linked-lists-stacks-queues-tutorial/)
 * `shift()`: "dequeue" an array
-* To sort by ascending numeric order: `arr.sort((a,b) => a-b);`
+* Sort by ascending numeric order: `arr.sort((a,b) => a-b);` `// The default sort order is ascending, built upon converting the elements into strings, then comparing their sequences of UTF-16 code units values.`
+* Format number: `(3.2561161).toFixed(2) // 3.25`
+* Swap: `[a,b] = [b,a]`
+* Increment including undefined: `x['a'] = (x['a'] || 0) + 1`
+* Mapping `['a', 'b', ..., 'z']` to `[0, 1, ..., 26]`: `let i = char.charCodeAt() - 97`
