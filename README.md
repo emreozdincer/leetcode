@@ -89,6 +89,29 @@ Journey with data structures and algorithms
 * Time Complexity: O(N), where N is the length of T and W is the number of allowed values for T[i]. Each index gets pushed and popped at most once from the stack.
 * Space Complexity: O(W). The size of the stack is bounded as it represents strictly increasing temperatures.
 
+# Sorting
+## [Heap Sort](https://www.programiz.com/dsa/heap-sort):
+* Time Complexity: BuildMaxHeap (nlogn) + Heapify (nlogn) = nlogn (all cases)
+* Space Complexity: O(1)
+* Applications: systems concerned with security and embedded system such as Linux Kernel uses Heap Sort because of the O(n log n) upper bound on Heapsort's running time and constant O(1) upper bound on its auxiliary storage. Finding K'th largest / smallest number, priority queues.
+
+## [Counting Sort](https://www.programiz.com/dsa/counting-sort)
+* Time Complexity: O(n+k) where k = max element. (all cases)
+* Space Complexity: O(k) `// gotta create an array of length k=max with potentially useless spots`
+* Counting sort is used when: 
+  1. the are smaller integers of multiple counts.
+  2. linear complexity is the need.
+
+## [Bucket Sort](https://www.programiz.com/dsa/bucket-sort)
+* Time Complexity:
+  1. Worst Case: When all elements are placed in the same bucket. Dependent on sorting algo applied on buckets. For insertion sort, o(N<sup>2</sup>)
+  2. Avg Case: Linear time. It holds true until the sum of the squares of the bucket sizes is linear in the total number of elements.
+  3. Best Case: O(n+k). O(n) is the complexity for making the buckets and O(k) is the complexity for sorting the elements of the bucket using algorithm having linear time complexity at best case.
+* Space Complexity: O(n+k), O(nk)
+* Bucket sort is used when:
+  1. input is uniformly distributed over a range.
+  2. there are floating point values
+  
 # JavaScript
 * [DS in JS](https://adrianmejia.com/data-structures-time-complexity-for-beginners-arrays-hashmaps-linked-lists-stacks-queues-tutorial/)
 * `shift()`: "dequeue" an array
