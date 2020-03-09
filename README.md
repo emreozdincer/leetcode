@@ -90,19 +90,19 @@ Journey with data structures and algorithms
 * Space Complexity: O(W). The size of the stack is bounded as it represents strictly increasing temperatures.
 
 # Sorting
-## [Heap Sort](https://www.programiz.com/dsa/heap-sort):
+### [Heap Sort](https://www.programiz.com/dsa/heap-sort):
 * Time Complexity: BuildMaxHeap (nlogn) + Heapify (nlogn) = nlogn (all cases)
 * Space Complexity: O(1)
 * Applications: systems concerned with security and embedded system such as Linux Kernel uses Heap Sort because of the O(n log n) upper bound on Heapsort's running time and constant O(1) upper bound on its auxiliary storage. Finding K'th largest / smallest number, priority queues.
 
-## [Counting Sort](https://www.programiz.com/dsa/counting-sort)
+### [Counting Sort](https://www.programiz.com/dsa/counting-sort)
 * Time Complexity: O(n+k) where k = max element. (all cases)
 * Space Complexity: O(k) `// gotta create an array of length k=max with potentially useless spots`
 * Counting sort is used when: 
   1. the are smaller integers of multiple counts.
   2. linear complexity is the need.
 
-## [Bucket Sort](https://www.programiz.com/dsa/bucket-sort)
+### [Bucket Sort](https://www.programiz.com/dsa/bucket-sort)
 * Time Complexity:
   1. Worst Case: When all elements are placed in the same bucket. Dependent on sorting algo applied on buckets. For insertion sort, o(N<sup>2</sup>)
   2. Avg Case: Linear time. It holds true until the sum of the squares of the bucket sizes is linear in the total number of elements.
@@ -112,6 +112,34 @@ Journey with data structures and algorithms
   1. input is uniformly distributed over a range.
   2. there are floating point values
   
+### Quick Sort
+* TC: Worst N2, Avg & best Nlogn
+* Space Complexity: Recursion Stack
+* Performs well on arrays. No O(N) extra memory usage required (in-place). Often fast. 
+
+### Selection Sort
+* Time Complexity: O(N2) all cases.
+* Space Complexity: O(1)
+* For N times, select min element and put it in the front of the list. 
+
+### Bubble Sort: 
+* Time Complexity: O(N2) worst and average, O(N) best case.
+* Space: O(1).
+```
+for i from 0 to n
+  for j from 0 to n-1-i:
+    if arr[j] > arr[j+1] swap;
+return arr;
+```
+
+### Insertion Sort:
+* TC: N2 avg & worse, N best
+* Space: 1
+```
+for i from 0 to n:
+  put the curr element into correct place among the elements on the right.
+```
+
 # JavaScript
 * [DS in JS](https://adrianmejia.com/data-structures-time-complexity-for-beginners-arrays-hashmaps-linked-lists-stacks-queues-tutorial/)
 * `shift()`: "dequeue" an array
