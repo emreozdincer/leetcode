@@ -146,5 +146,5 @@ for i from 0 to n:
 * Sort by ascending numeric order: `arr.sort((a,b) => a-b);` `// The default sort order is ascending, built upon converting the elements into strings, then comparing their sequences of UTF-16 code units values.`
 * Format number: `(3.2561161).toFixed(2) // 3.25`
 * Swap: `[a,b] = [b,a]`
-* Increment including undefined: `x['a'] = (x['a'] || 0) + 1`
+* Increment including undefined: `hash[word] = hash[word]+1||1;`
 * Mapping `['a', 'b', ..., 'z']` to `[0, 1, ..., 26]`: `let i = char.charCodeAt() - 97`
