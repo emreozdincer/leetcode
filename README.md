@@ -148,3 +148,8 @@ for i from 0 to n:
 * Swap: `[a,b] = [b,a]`
 * Increment including undefined: `hash[word] = hash[word]+1||1;`
 * Mapping `['a', 'b', ..., 'z']` to `[0, 1, ..., 26]`: `let i = char.charCodeAt() - 97`
+* Objects cannot be used as Object keys, they'll be converted to the string `object Object` as the key instead. Use `Map` or `WeakMap` to use Objects as keys.
+* `Map` vs `WeakMap`:
+  * WeakMap only accepts Objects as keys whereas maps accept any value
+  * WeakMap keeps weak references to the objects which allows the garbage collector to clear objects when unreferenced. In relation to this, WeakMap is not enumarable, i.e you can't get a list of its keys.
+* Create n by m matrix: `let usedCells = new Array(n).fill().map(() => new Array(m).fill(false));`
