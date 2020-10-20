@@ -60,3 +60,61 @@ Push vs pull CDNS.
 * As product evolves, monolith starts being more of an hinderance rather than a convenience. Development gets very hard. Whole system may fail when there is a single bug. Complexity introduces longer system restart or maintanance. Hard to make small updates, as the whole system needs to update.
 * Microservices are more scalable. Easier to develop indivudual modules with different teams. Everyone can know about different parts of system and it will be fine.
 * Microservices introduce a different set of problems: the APIs become important as different services depend on them. End-to-end or integration tests get harder to execute as you need to spin up every single relevant microservice. CI/CD can decrease this problem to an extent.
+
+### Object-Oriented Design with JS
+* [Resource](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Inheritance)
+* Super() call enables inheritance to the extended class.
+
+```javascript
+class Person {
+  constructor(first, last, age, gender, interests) {
+    this.name = {
+      first,
+      last
+    };
+    this.age = age;
+    this.gender = gender;
+    this.interests = interests;
+  }
+
+  greeting() {
+    console.log(`Hi! I'm ${this.name.first}`);
+  };
+
+  farewell() {
+    console.log(`${this.name.first} has left the building. Bye for now!`);
+  };
+}
+
+class Teacher extends Person {
+  constructor(first, last, age, gender, interests, subject, grade) {
+    super(first, last, age, gender, interests);
+    // subject and grade are specific to Teacher
+    this._subject = subject; // fake private value with getter and setter
+    this.grade = grade;
+  }
+
+  get subject() {
+    return [this._subject[0].toUpperCase(), this._subject.slice(1)].join('');
+  }
+
+  set subject(newSubject) {
+    this._subject = newSubject + ' extra';
+  }
+}
+```
+
+```javascript
+let snape = new Teacher('Severus', 'Snape', 58, 'male', ['Potions'], 'Dark arts', 5);
+snape.greeting(); // Hi! I'm Severus.
+snape.farewell(); // Severus has left the building. Bye for now.
+
+// Check the default value
+console.log(snape.subject) // Returns "Dark arts"
+
+// Change the value
+snape.subject = "Balloon animals" // Sets _subject to "Balloon animals extra"
+
+// Check it again and see if it matches the new value
+console.log(snape.subject) // Returns "Balloon animals"
+```
